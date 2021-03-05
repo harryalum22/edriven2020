@@ -119,17 +119,32 @@ if(month > 12 || day > 7){
                 }
         
                 if (adder <= day - 1) {
-                    creater += "<td></td>"
-                    adder++
+                    if(wCounter == 0){
+                        creater += '<td style="background-color: red;"></td>'
+                        adder++
+                    }else{
+                        creater += "<td></td>"
+                        adder++
+                    }
                 }
         
-                else if (cDays > days[month - 1])
-                    creater += "<td></td>"
+                else if (cDays > days[month - 1]){
+                    if(wCounter == 0){
+                        creater += '<td style="background-color: red;"></td>'
+                    }else
+                        creater += "<td></td>"
+                }
+                    
         
                 else {
                     if (cDays <= days[month - 1]) {
-                        creater += `<td>${cDays}</td>`
-                        cDays++
+                        if(wCounter == 0){
+                            creater += `<td style="background-color: red;">${cDays}</td>`
+                            cDays++
+                        }else{
+                            creater += `<td>${cDays}</td>`
+                            cDays++
+                        }
                     }
                     else
                         creater += "<td></td>"
