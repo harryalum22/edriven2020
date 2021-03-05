@@ -35,7 +35,7 @@ function Calendar(element, month, day) {
         mname = "Invalid Input"
     }
 
-    let creater = `<table><tr><td colspan = "7" align = "center" id="month" font-style = "italic">${mname}</tr></td><tr><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr>`
+    let creater = `<table><tr><td colspan = "7" align = "center" id="month" font-style = "italic">${mname}</tr></td><tr><th style="background-color: red;">SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr>`
     let adder = 1
     let cDays = 1
     let wCounter = 0
@@ -112,7 +112,7 @@ if(month > 12 || day > 7){
             }
             
         }else if(days[month-1] == 28){
-            if(day >= 6){
+            if(day >= 2){
             for (let i = 0; i < 35; i++) {
                 if (wCounter == 0) {
                     creater += '<tr>'
@@ -143,7 +143,7 @@ if(month > 12 || day > 7){
                     wCounter++
                 }
             }
-        }else{
+            }else{
             for (let i = 0; i < 28; i++) {
                 if (wCounter == 0) {
                     creater += '<tr>'
@@ -175,9 +175,9 @@ if(month > 12 || day > 7){
                 }
             }
         }
-        }else{
-            if(day >= 6){
-                for (let i = 0; i < 35; i++) {
+        }else if(days[month-1] == 30){
+            if(day > 6){
+                for (let i = 0; i < 42; i++) {
                     if (wCounter == 0) {
                         creater += '<tr>'
                     }
@@ -246,6 +246,4 @@ if(month > 12 || day > 7){
         element.innerHTML = creater;
         }
     }
-    
-
 Calendar(H1, input1, input2)
