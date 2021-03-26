@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="css/style.css" />
+	
+	<title>Summative Assessment</title>
+</head>
+<body>
+	<div class="topnav">
+    <a class="active" href="index.html" style="color: white;">Harry.com</a>
+		<a href="index.html" style="color: white;">Home</a>
+    </div>
+    <div class="container">
+      <button id="botton1">Add</button>
+      <table id="myTable" style="text-align: center;">
+        <tr>
+          <th>#</th>
+          <th>Order #</th>
+          <th>Customer Name</th>
+          <th>Total</th>
+          <th>Actions</th>
+        </tr>
+      </table>
+      <div id="myModal" class="modal">
+        <div class="modal-content" style="background-color: white;">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2 style="color: black;">New order</h2>
+          </div>
+          <div class="modal-body">
+            <form>
+              <input type="text" style="width: 97%;" id="orNum"value="" placeholder="OR Number" /><br />
+              <input type="text" style="width: 97%;" id="cName" value="" placeholder="Customer Name" /><br />
+              <h2 style="color: black;">Items</h2>
+              <table style="text-align: center;"
+                <tr>
+                  <td>
+                    <select style="width: 40%; height: 40px;"  id="iitem1"> </select>
+                  </td>
+                  <td>
+                    <input type="number"  id="price1" min="1" value="1.00" class="cost" />
+                  </td>
+                  <td>
+                    <input type="number"  id="qty1" min="1" value="1" class="qty" />
+                  </td>
+                  <td>
+                    <input type="text"  id="total1" placeholder="Subtotal" value="" disabled />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <select style="width: 40%; height: 40px;"  id="iitem2"> </select>
+                  </td>
+                  <td>
+                    <input type="number"  id="price2" min="1" value="1.00" class="cost" />
+                  </td>
+                  <td>
+                    <input type="number"  id="qty2" min="1" value="1" class="qty" />
+                  </td>
+                  <td>
+                    <input type="text"  id="total2" placeholder="Subtotal" value="" disabled />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <select style="width: 40%; height: 40px;"  id="iitem3"> </select>
+                  </td>
+                  <td>
+                    <input type="number"  id="price3" min="1" value="1.00" class="cost" />
+                  </td>
+                  <td>
+                    <input type="number"  id="qty3" min="1" value="1" class="qty" />
+                  </td>
+                  <td>
+                    <input type="text"  id="total3" placeholder="Subtotal" value="" disabled />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <select style="width: 40%; height: 40px;"  id="iitem4"> </select>
+                  </td>
+                  <td>
+                    <input type="number"  id="price4" min="1" value="1.00" class="cost" />
+                  </td>
+                  <td>
+                    <input type="number"  id="qty4" min="1" value="1" class="qty" />
+                  </td>
+                  <td>
+                    <input type="text"  id="total4" placeholder="Subtotal" value="" disabled />
+                  </td>
+                </tr>
+              </table>
+              <br />
+              <button type="button" id="btn1">Save</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <h3></h3>
+          </div>
+        </div>
+      </div>
+      <div id="vm" class="modal">
+        <div class="modal-content"style="background-color: white;">
+          <div class="modal-header" >
+            <span id="vmc" class="close">&times;</span>
+            <h2 id="modal-title" style="color: black;">View Order</h2>
+          </div>
+          <div id="vmb" class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <h3></h3>
+          </div>
+        </div>
+      </div>
+      <script src="js/my.js"></script>
+      <script>
+        var mdl = document.getElementById("myModal");
+        var botton1 = document.getElementById("botton1");
+        var close1 = document.getElementsByClassName("close")[0];
+        botton1.onclick = function () {
+          mdl.style.display = "block";
+        };
+        close1.onclick = function () {
+          console.log('CLOSED');
+          mdl.style.display = "none";
+        };
+        window.onclick = function (event) {
+          if (event.target == mdl) {
+            mdl.style.display = "none";
+          }
+        };
+      </script>
+    </div>
+  </body>
+</html>
